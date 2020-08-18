@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <!-- <script src="http://www.example.com/data/?callback=handleResponse"></script> -->
+    <script src="jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    //1、使用JS动态生成script标签，进行跨域操作
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+    var script = document.createElement('script');
+    script.src = 'http://www.example.com/data/?callback=handleResponse';
+    document.body.insertBefore(script, document.body.firstChild);
+    --------------------------
+    //2、手动生成script标签
+    function handleResponse(response){
+        console.log('The responsed data is: '+response.data);
+        //处理获得的Json数据
+    }
+
+    --------------------------
+    //3、使用jQuery进行jsonp操作
+    //jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁
+    //$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
+    <script>
+        $.getJson('http://www.example.com/data/?callback=?',function(jsondata){
+          console.log("牛逼",jsondata)
+        //处理获得的Json数据
+    });
+    </script>
+
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="diva" style="width: 1000px;height: 200px;border: 1px solid #0C0C0C;">
+      
+    </div>
+		<script>
+			$(function(){
+				$.ajax({
+          // 后端增加
+					url:'http://op.funlink-tech.com/data/data-json/202008181828.json',
+					success:function(data){
+            console.log("结果是====>",data)
+					}
+				})
+			});
+		</script>
+	</body>
