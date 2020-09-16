@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <script type="text/javascript">
+      var arr = [11,22,333,4444,55555]
+      console.log("arr==>",arr)
+
+// 箭头函数
+      var nn = arr.map((item)=>{
+        return "牛鼻"+item
+      })
+      console.log("nn--->>",nn)
+
+// ？普通函数
+      var mm = arr.map(function(item){
+        return "打卡"+item
+      })
+      console.log("mm--->>",mm)
+
+      // es5 合并两个数组
+      var hh = nn.concat(mm)
+      console.log("hh-------->",hh)
+
+      // es6 合并两个数组
+      var ll = [nn,mm]
+      console.log("ll==---->",ll)
+
+      // es6 合并两个数组
+      var ll3 = [...nn,...mm]
+      console.log("ll3[用3个点展开]==---->",ll3)
+
+      // document
+      var name = '孔龙'
+      var age  = 22
+      var sex = '男'
+      var obj  = "【es5】这是 name,年领是age"+name+"打卡机\n-------"
+      document.write(obj)
+
+       document.write(`<br>`) //换行了，直接写入
+       var el = `
+       <h1>这是一个标题</h1>
+       `
+
+        document.write(el)
+
+         document.write(`<br>`) //换行了，直接写入
+      var obj2  = "【es6】$符号，，这是 $name,年领是$age"
+      document.write(obj2)
+
+      var arr002 = [111,222,333,444];
+      // var arr002 = [111,222,333,444] //必须加；，必须加;  否则报错
+      [a,b] = arr002
+      console.log("a===>",a)
+      console.log("b===>",b)
+       document.write(`<br>`) //换行了，直接写入
+      document.write("a==>",a)
+       document.write(`<br>`) //换行了，直接写入
+      document.write("b==>",b)
+       document.write(`<br>`) //换行了，直接写入
+        document.write(`<br>`) //换行了，直接写入
+         document.write(`<br>`) //换行了，直接写入
+          document.write(`<br>`) //换行了，直接写入
+           document.write(`<br>`) //换行了，直接写入
+
+var data02 = {
+  myName:"恐龙",
+  Age: 22,
+  LL:"nobody judeg me"
+}
+
+
+ document.write(`<br>`) //换行了，直接写入
+var {myName} = data02 //必须与data02数据字段的名字一样！！！，否则出不来
+document.write("nnnn1=>",myName)
+document.writeln("---nnnn换行=>",myName)
+document.writeln("nnnn换行2=>",myName)
+document.writeln("nnnn换行3=>",myName)
+  document.write(`<br>`) //换行了，直接写入
+document.writeln("nnnn换行3=>",document.domain)
+  document.write(`<br>`) //换行了，直接写入
+document.writeln("nnnn换行3=--URL-->",document.URL)
+  document.write(`<br>`) //换行了，直接写入
+
+
+  var oobbjj = {
+    nnmame02:"张三",
+    fun01: function(){
+      document.write("<br/> 张安----贷款 <br/>")
+    },
+    func02(){
+       document.write("<br/> 李四----贷款 <br/>")
+    },
+    func03(){
+       document.write("<br/> "+this.nnmame02+" <br/>")
+       // document.write("<br/> 22--"+nnmame02+" --22<br/>")//这种方式获取不到
+    },
+    func04(){
+      setTimeout(function(){
+         document.write("<br/> 111电视定时--> "+this.nnmame02+" <br/>")
+         console.log("定时出来")
+      },1000)
+    }
+  }
+  oobbjj.fun01();
+  oobbjj.func02()
+  oobbjj.func03()
+  oobbjj.func04()
+
+  // 箭头函数
+  var bb = function(){
+    document.write("去的")
+  };
+  bb();
+    </script>
+	</body>
+</html>
