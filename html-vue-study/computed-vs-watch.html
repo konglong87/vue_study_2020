@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    </script>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <div id="cvw001">
+      <p>{{msg}}</p>
+      <input v-model="name1">00</p>
+      <p>{{name1}}</p>
+      <br>
+
+
+      <input v-model="res"></p>
+
+      <p>第1下{{name1}}</p>
+      <p>第2下{{name1}}</p>
+      <p>第3下{{name1}}</p>
+
+
+
+      <input type="" name="" id="" value="" v-model="name001" />
+      <p> 100下  {{name001}}</p>
+
+
+    </div>
+
+     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> -->
+     <script src="./vue.js" type="text/javascript" charset="utf-8"></script>
+       <script type="text/javascript">
+         const vm = new Vue({
+           el: "#cvw001",
+           data:{
+             msg : 'sunzong的对比',
+             name1: "恐龙",
+             fkw: "zunzong",
+             res1: '',
+             res:"",
+           },
+
+
+
+           computed:{
+             name001: function(){
+               console.log("[计算computed]---name001 被调用")
+               this.res =  this.name1 + "  "+ this.fkw
+               return this.name1 + "  "+ this.fkw
+
+             }
+           },
+
+           watch:{
+               res: function(newVal){
+                    console.log("【监听】坚实捕捉到了===>",newVal)
+                    this.res1 = newVal+ this.name1
+               }
+           }
+
+         })
+       </script>
+
+
+
+	</body>
+</html>
